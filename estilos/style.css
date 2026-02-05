@@ -19,7 +19,7 @@
   --texto: #222222;
   --texto-inverso: #ffffff;
   --destaque: #3b4ca5;
-  --destaque-inverso: #808fd7;;
+  --destaque-inverso: #808fd7;
   --fundo-card: #ffffff;
 }
 
@@ -125,7 +125,7 @@ article {
 
 article h2 {
   color: var(--destaque);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 article#video #video-container {
@@ -179,10 +179,38 @@ article#video #video-container {
   border-radius: 4px;
 }
 
+#formacao-container {
+  display: flex;
+  flex-flow: column-reverse;
+  gap: 20px;
+}
+
+#formacao-container .curso {
+  background-color: var(--fundo-principal);
+  padding-left: 10px;
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque-inverso);
+  transition:
+    border-width 0.5s,
+    border-color 0.5s;
+}
+
+#formacao-container .curso:hover {
+  border-left-width: 15px;
+  cursor: pointer;
+  border-color: var(--destaque);
+}
+
+#formacao-container .periodo{
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--texto);
+}
+
 
 
 @media screen and (min-width: 768px) {
-  #skill-container{
+  #skill-container {
     grid-template-columns: 1fr 1fr;
   }
 }
