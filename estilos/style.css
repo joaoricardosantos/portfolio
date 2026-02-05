@@ -23,11 +23,23 @@
   --fundo-card: #ffffff;
 }
 
+body.escuro {
+  --fundo-principal: #222222;
+  --texto: #e0e0e0;
+  --texto-inverso: #333333;
+  --destaque: rgb(173, 173, 173);
+  --destaque-inverso: #7d7c7c;
+  --fundo-card: #444444;
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
   background-color: var(--fundo-principal);
   color: var(--texto);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 header {
@@ -247,7 +259,7 @@ footer {
   background-color: var(--destaque);
   color: var(--texto-inverso);
   text-align: center;
-  padding: 15px;
+  padding: 10 px;
 }
 
 footer a {
@@ -262,6 +274,22 @@ footer a:hover {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: auto 300px 1fr auto;
+  }
+
+  section#ficha {
+    position: sticky;
+    height: fit-content;
+    top: 65px;
+    grid-column: 2 / 3;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
   }
